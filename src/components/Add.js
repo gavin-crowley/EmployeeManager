@@ -36,7 +36,7 @@ const Add = () => {
   };
 
   useEffect(() => {
-    EmployeeService.getEmployeeById(id)
+    EmployeeService.getEmployeeById()
       .then((response) => {
         setFirstName(response.data.firstName);
         setLastName(response.data.lastName);
@@ -63,8 +63,8 @@ const Add = () => {
       {title()}
 
       <div id='addEmployeeModal'>
-        <div class='modal-dialog'>
-          <div class='modal-content'>
+        <div className='modal-dialog'>
+          <div className='modal-content'>
             <form>
               {/* <div class='modal-header'>
                 <h4 class='modal-title'>Add Employee</h4>
@@ -77,12 +77,12 @@ const Add = () => {
                   &times;
                 </button>
               </div> */}
-              <div class='modal-body'>
-                <div class='form-group'>
+              <div className='modal-body'>
+                <div className='form-group'>
                   <label>First Name</label>
                   <input
                     type='text'
-                    class='form-control'
+                    className='form-control'
                     required
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
@@ -92,7 +92,7 @@ const Add = () => {
                   <label>Last Name</label>
                   <input
                     type='email'
-                    class='form-control'
+                    className='form-control'
                     required
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
@@ -102,18 +102,18 @@ const Add = () => {
                   <label>Address</label>
                   <textarea class='form-control' required></textarea>
                 </div> */}
-                <div class='form-group'>
+                <div className='form-group'>
                   <label>Email</label>
                   <input
                     type='text'
-                    class='form-control'
+                    className='form-control'
                     required
                     value={emailId}
                     onChange={(e) => setEmailId(e.target.value)}
                   />
                 </div>
               </div>
-              <div class='modal-footer'>
+              <div className='modal-footer'>
                 {/* <input
                   type='button'
                   class='btn btn-default'
@@ -125,14 +125,14 @@ const Add = () => {
                   Cancel{' '} */}
                   <input
                   type='button'
-                  class='btn btn-default'
+                  className='btn btn-default'
                   data-dismiss='modal'
                   value='Cancel'
                 />
                 </Link>
                 <input
                   type='submit'
-                  class='btn btn-success'
+                  className='btn btn-success'
                   value='Update'
                   onClick={(e) => saveOrUpdateEmployee(e)}
                 />

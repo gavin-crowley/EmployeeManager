@@ -1,16 +1,15 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div class='table-title'>
-      <div class='row'>
-        <div class='col-sm-6'>
+    <div className='table-title'>
+      <div className='row'>
+        <div className='col-sm-6'>
           <h2>
             Manage <b>Employees</b>
           </h2>
         </div>
-        <div class='col-sm-6'>
+        <div className='col-sm-6'>
           {/* <a
             href='#addEmployeeModal'
             class='btn btn-success'

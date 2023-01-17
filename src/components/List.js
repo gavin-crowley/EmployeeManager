@@ -13,7 +13,7 @@ const List = () => {
     EmployeeService.getAllEmployees()
       .then((response) => {
         setEmployees(response.data);
-        console.log(response.data);
+        // console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -66,13 +66,13 @@ const List = () => {
       <div className='add-employee-btn'>
         <Link to='/add-employee' className='btn btn-success'>
           <div className='add-emp-btn-content'>
-            <i class='material-icons'>&#xE147;</i>
+            <i className='material-icons'>&#xE147;</i>
             <span>Add New Employee</span>
           </div>
         </Link>
       </div>
 
-      <table class='table table-striped table-hover'>
+      <table className='table table-striped table-hover'>
         <thead>
           <tr>
             <th>
@@ -94,8 +94,8 @@ const List = () => {
           </tr>
         </thead>
         <tbody>
-          {employees.map((employee) => (
-            <tr>
+          {employees.map((employee, i) => (
+            <tr key={i}>
               <td>
                 {/* <span class='custom-checkbox'>
                 <input
@@ -118,17 +118,17 @@ const List = () => {
                   </i>
                 </a> */}
                 <Link className='edit' to={`/edit-employee/${employee.id}`}>
-                  <i class='material-icons' data-toggle='tooltip' title='Edit'>
+                  <i className='material-icons' data-toggle='tooltip' title='Edit'>
                     &#xE254;
                   </i>
                 </Link>
                 <a
                   href='#deleteEmployeeModal'
-                  class='delete'
+                  className='delete'
                   data-toggle='modal'
                 >
                   <i
-                    class='material-icons'
+                    className='material-icons'
                     data-toggle='tooltip'
                     title='Delete'
                     onClick={() => deleteEmployee(employee.id)}

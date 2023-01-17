@@ -1,9 +1,5 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import FooterComponent from './components/FooterComponent';
-import HeaderComponent from './components/HeaderComponent';
-import ListEmployeeComponent from './components/ListEmployeeComponent';
-import AddEmployeeComponent from './components/AddEmployeeComponent';
 import Header from './components/Header';
 import List from './components/List';
 import Add from './components/Add';
@@ -30,9 +26,9 @@ function App() {
         <FooterComponent />
       </Router> */}
       <>
-        <div class='container-xl'>
-          <div class='table-responsive'>
-            <div class='table-wrapper'>
+        <div className='container-xl'>
+          <div className='table-responsive'>
+            <div className='table-wrapper'>
               <Router>
                 {/* <HeaderComponent /> */}
                 <Header />
