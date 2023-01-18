@@ -25,7 +25,7 @@ const Add = () => {
     } else {
       EmployeeService.createEmployee(employee)
         .then((response) => {
-          console.log(response.data);
+          // console.log(response.data);
 
           history.push('/employees');
         })
@@ -36,7 +36,7 @@ const Add = () => {
   };
 
   useEffect(() => {
-    EmployeeService.getEmployeeById()
+    EmployeeService.getEmployeeById(id)
       .then((response) => {
         setFirstName(response.data.firstName);
         setLastName(response.data.lastName);
@@ -56,9 +56,6 @@ const Add = () => {
   };
 
   return (
-    // <div id='addEmployeeModal' class='modal fade'>
-    //   <div class='modal-dialog'>
-    //     <div class='modal-content'>
     <>
       {title()}
 
@@ -66,17 +63,6 @@ const Add = () => {
         <div className='modal-dialog'>
           <div className='modal-content'>
             <form>
-              {/* <div class='modal-header'>
-                <h4 class='modal-title'>Add Employee</h4>
-                <button
-                  type='button'
-                  class='close'
-                  data-dismiss='modal'
-                  aria-hidden='true'
-                >
-                  &times;
-                </button>
-              </div> */}
               <div className='modal-body'>
                 <div className='form-group'>
                   <label>First Name</label>
@@ -88,7 +74,7 @@ const Add = () => {
                     onChange={(e) => setFirstName(e.target.value)}
                   />
                 </div>
-                <div class='form-group'>
+                <div className='form-group'>
                   <label>Last Name</label>
                   <input
                     type='email'
@@ -98,10 +84,6 @@ const Add = () => {
                     onChange={(e) => setLastName(e.target.value)}
                   />
                 </div>
-                {/* <div class='form-group'>
-                  <label>Address</label>
-                  <textarea class='form-control' required></textarea>
-                </div> */}
                 <div className='form-group'>
                   <label>Email</label>
                   <input
@@ -114,15 +96,7 @@ const Add = () => {
                 </div>
               </div>
               <div className='modal-footer'>
-                {/* <input
-                  type='button'
-                  class='btn btn-default'
-                  data-dismiss='modal'
-                  value='Cancel'
-                /> */}
                 <Link to='/employees' className=''>
-                  {/* {' '}
-                  Cancel{' '} */}
                   <input
                   type='button'
                   className='btn btn-default'
@@ -133,7 +107,7 @@ const Add = () => {
                 <input
                   type='submit'
                   className='btn btn-success'
-                  value='Update'
+                  value='Submit'
                   onClick={(e) => saveOrUpdateEmployee(e)}
                 />
               </div>
